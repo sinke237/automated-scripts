@@ -12,3 +12,7 @@ The config-programs.sh has programs I frequently need to use when creating a new
 
 Please feel free to folk this reposity and customize the scripts for your needs.
 Don't forget to give this repo a star.
+
+
+## Note
+Run the config.programs.sh from the host machine to install all the sited programs in VM.
