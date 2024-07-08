@@ -15,8 +15,12 @@ read -p "How much ram should this VM use (in GB)? " ram_value_input
 disk_space=$(extract_num "$disk_space_input")
 ram_value=$(extract_num "$ram_value_input")
 
-multipass launch --name "$vm_name" --cpus "$no_of_cpus" --disk "${disk_space}G" --memory "${ram_value}G"
+if multipass launch --name "$vm_name" --cpus "$no_of_cpus" --disk "${disk_space}G" --memory "${ram_value}G"; then
 
-# Mount dir form host to VM
-read -p "Enter dir to mount from host (e.g. /path/to/dir): " host_dir
-multipass mount "$host_dir" "$vm_name":/home/ubuntu/dir
+    # Mount dir form host to VM
+    read -p "Enter dir to mount from host (e.g. /path/to/dir): " host_dir
+    multipass mount "$host_dir" "$vm_name":/home/ubuntu/mount_points
+
+else 
+    echo "Failed to create VM '$vm_name'. Please check your inputs and try again."
+fi
