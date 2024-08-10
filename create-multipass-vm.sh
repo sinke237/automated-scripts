@@ -19,6 +19,7 @@ if multipass launch --name "$vm_name" --cpus "$no_of_cpus" --disk "${disk_space}
 
     if [[ $create_mount == "yes" ]]; then
         read -p "Enter directory to mount from host (e.g. /path/to/dir): " host_dir
+        # check if the mount point exits first before mounting.
         multipass mount "$host_dir" "$vm_name":/home/ubuntu/mount_point
         echo "Mount point created successfully."
     else
