@@ -12,7 +12,8 @@ Great scripts to automate repeated tasks
 
 - To install programs into your just created vm, execute (on the host):
 ``` ./setup-vm.sh ```
-NOTE: this will trigger `script-inside-vm.sh` to run inside the vm.
+
+- NOTE: this will trigger `script-inside-vm.sh` to run inside the vm.
 
 
 ## Challenges
