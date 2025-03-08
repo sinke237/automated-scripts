@@ -3,7 +3,7 @@
 # Start a shell session with Multipass VM
 read -p "Enter the name of your Multipass VM: " vm_name
 
-# Check if the VM exists before attempting to shell into it
+# Check  the VM exists before attempting to shell into it
 if multipass info $vm_name &> /dev/null; then
     echo "VM $vm_name exists. Starting shell session..."
 
